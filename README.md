@@ -14,11 +14,11 @@ CS Server Hub is a web application built with Next.js that displays a list of Co
 
 ## Demo
 
-### 1. Homepage
+### 1. Home page
 ![Homepage of CS Server Hub](./img/homepage.png)
 
-### 2. About Us Page
+### 2. About Us page
 ![Homepage of CS Server Hub](./img/aboutuspage.png)
 
-### 3. Contact Us Page
+### 3. Contact Us page
 ![Homepage of CS Server Hub](./img/contactuspage.png)
