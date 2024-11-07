@@ -11,3 +11,14 @@ CS Server Hub is a web application built with Next.js that displays a list of Co
 - **Country Flags**: Shows the server location with a country flag icon.
 - **Responsive Design**: Optimized for various screen sizes.
 - **Custom Styling**: Styled using custom CSS and TailwindCSS for a clean, modern look.
+
+## Demo
+
+### 1. Homepage
+![Homepage of CS Server Hub](./img/homepage.png)
+
+### 2. About Us Page
+![Homepage of CS Server Hub](./img/aboutuspage.png)
+
+### 3. Contact Us Page
+![Homepage of CS Server Hub](./img/contactuspage.png)
