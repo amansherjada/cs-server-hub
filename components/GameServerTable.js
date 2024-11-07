@@ -1,11 +1,12 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from 'react';
+import { Toaster, toast } from 'sonner';
 
 const GameServerTable = () => {
   const [servers, setServers] = useState([]);
   const [page, setPage] = useState(1);
-  const [pageSize] = useState(8); // page size as needed
+  const [pageSize] = useState(8);
   const [loading, setLoading] = useState(true);
 
   // Fetch servers data from API and sort by player count
@@ -15,9 +16,10 @@ const GameServerTable = () => {
       const res = await fetch('https://api.cs2hvh.com/');
       const data = await res.json();
       if (data && data.steam) {
-        const sortedServers = data.steam
-          .sort((a, b) => b.players - a.players); // Sort descending by players
+        const sortedServers = data.steam.sort((a, b) => b.players - a.players);
         setServers(sortedServers);
+        // success notification when data refresh
+        toast.success("Server list refreshed successfully!");
       }
     } catch (error) {
       console.error('Error fetching server data:', error);
@@ -42,7 +44,10 @@ const GameServerTable = () => {
   const paginatedServers = servers.slice(start, start + pageSize);
 
   return (
-    <div className='flex flex-col items-center justify-center my-6'>
+    <div className="flex flex-col items-center justify-center my-6">
+      {/* Toaster for notifications */}
+      <Toaster position="bottom-center" />
+
       <table className="server-table">
         <thead>
           <tr>
@@ -60,9 +65,9 @@ const GameServerTable = () => {
           ) : (
             paginatedServers.map((server, index) => (
               <tr key={index}>
-                <td className='flex justify-start gap-3 items-center'>
+                <td className="flex justify-start gap-3 items-center">
                   <img
-                    className='h-5'
+                    className="h-5"
                     src={`https://flagcdn.com/16x12/${server.countryCode.toLowerCase()}.png`}
                     alt={server.country}
                   /> {server.country}
